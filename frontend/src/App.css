@@ -1,0 +1,90 @@
+*{
+    margin:0;
+    padding:0;
+}
+.all{
+    font-family: "Open Sans", sans-serif;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
+      url("./bg.jpeg");
+    min-width: 100%;
+    min-height: 100vh;
+    height: auto;
+    width: auto;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    background-attachment: fixed;
+    overflow: hidden;
+      color: white;
+      text-align: center;
+}
+.App{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    margin-top: 50px;
+}
+.shbtn{
+    width: 100%;
+    padding: 20px 10px;
+    cursor: pointer;
+    margin-bottom: 8px;
+}
+input {
+    
+    padding: 5px 0;
+    margin: 5px 0;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #999;
+    color: white;
+    outline: none;
+    background: transparent;
+  }
+.btntn{
+    width: auto;
+  padding: 10px 10px;
+  border-radius: 2px;
+  cursor: pointer;
+  display: block;
+  margin: 5px auto;
+  background-color: black;
+  color: white;
+  outline: none !important;
+  border: none !important;
+  font-size: 1rem;
+  box-shadow: 0 0 1px 1px #f5bc02;
+}
+.btntn:hover{
+    color:#f5bc02;
+}
+
+.linkcss{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.link{
+    font-size: large;
+    margin-top: 20px;
+    border: none !important;
+    outline: none !important;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+.link:hover{
+    color: #f5bc02;
+}
+.btnflex{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-content: center;
+    margin-top: 20px;
+}

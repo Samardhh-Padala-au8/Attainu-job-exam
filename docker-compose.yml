@@ -1,0 +1,53 @@
+version: '3.9'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    image: myapp-backend
+    container_name: myapp-node-backend
+    command: npm start
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./backend/:/usr/src/app
+      - /usr/src/app/node_modules
+    depends_on:
+      - postgres-db
+    env_file: ./backend/.env
+    networks:
+      - app-network
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    image: myapp-frondend
+    container_name: myapp-react-frontend
+    command: npm start
+    volumes:
+      - ./frontend/:/usr/app
+      - /usr/app/node_modules
+    depends_on:
+      - backend
+    ports:
+      - "3000:3000"
+    networks:
+      - app-network
+  postgres-db:
+    image: postgres
+    restart: always
+    volumes:
+      - data-volume:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: attainu
+      POSTGRES_DB: attainu-test
+    networks:
+      - app-network  
+
+networks:
+    app-network:
+        driver: bridge
+
+volumes:
+    data-volume:
